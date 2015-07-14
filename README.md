@@ -1,7 +1,7 @@
 # Google Code Jam 2014
 Python solutions of Google Code Jam 2014
 
-* [World Finals](https://github.com/kamyu104/GoogleCodeJam-2015#world-finals)
+* [World Finals](https://github.com/kamyu104/GoogleCodeJam-2014#world-finals)
 
 ##World Finals
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
