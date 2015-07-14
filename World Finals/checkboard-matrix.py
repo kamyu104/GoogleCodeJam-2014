@@ -1,3 +1,12 @@
+# Copyright (c) 2015 kamyu. All rights reserved.
+#
+# Google Code Jam 2014 World Finals - Problem A. Checkboard Matrix
+# https://code.google.com/codejam/contest/7214486/dashboard#s=p0
+#
+# Time:  O(N^2)
+# Space: O(N^2)
+#
+
 def count_swaps(pos):
     nswaps = 0
     for i in pos:
@@ -8,6 +17,7 @@ def count_swaps(pos):
 
 def inverse(A):
     return [chr(ord('0') + ord('1') - ord(c)) for c in A]
+
 
 # min_swaps returns minimum swaps required to 
 # form alternating rows. If B is an invalid matrix, 
