@@ -50,7 +50,7 @@ def count(arr, N, k, nswapped):
     return ret
 
 
-for case in xrange(int(input())):
+for case in xrange(input()):
     N = input()
     arr = map(int, raw_input().strip().split())
     print("Case #%d: %d" % (case+1, count(arr, N, 0, 0)))
