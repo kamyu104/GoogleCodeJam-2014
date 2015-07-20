@@ -3,7 +3,7 @@
 # Google Code Jam 2014 World Finals - Problem C. Symmetric Trees
 # https://code.google.com/codejam/contest/7214486/dashboard#s=p2
 #
-# Time:  O(N^4* logN) = O(N * (N * sum(klogk))) in the worst case of all vertices on the symmetry line
+# Time:  O(N^3* logN) = O(N * (sum(klogk)) in the worst case of all vertices on the symmetry line
 # Space: O(N^3)
 #
 
