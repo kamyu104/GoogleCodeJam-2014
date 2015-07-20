@@ -4,7 +4,7 @@
 # https://code.google.com/codejam/contest/7214486/dashboard#s=p2
 #
 # Time:  O(N^3* logN) = O(N * (sum(klogk)) in the worst case of all vertices on the symmetry line
-# Space: O(N^3)
+# Space: O(N^2)
 #
 
 import sys
