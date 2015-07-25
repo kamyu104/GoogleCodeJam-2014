@@ -47,7 +47,8 @@ def valid(partial):
 def paradox_sort():
     visited = set()
     dfs(A, set(), visited)
-    if len(visited) != N: return "IMPOSSIBLE"
+    if len(visited) != N:
+        return "IMPOSSIBLE"
 
     partial = []
     for i in xrange(N):
