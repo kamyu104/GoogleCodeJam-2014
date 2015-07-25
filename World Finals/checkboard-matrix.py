@@ -67,5 +67,5 @@ for case in xrange(input()):
     N = input()
     M = []
     for i in xrange(2 * N):
-        M.append(list(raw_input()))
+        M.append(list(raw_input().strip()))
     print "Case #%d: %s" % (case+1, checkboard_matrix(M, N))
