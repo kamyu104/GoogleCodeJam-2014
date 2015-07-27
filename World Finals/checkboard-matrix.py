@@ -11,7 +11,7 @@ def count_swaps(pos):
     nswaps = 0
     for i in pos:
         if i % 2 == 0:
-            nswaps = nswaps + 1
+            nswaps += 1
     return nswaps
 
 
