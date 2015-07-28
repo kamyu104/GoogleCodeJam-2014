@@ -69,7 +69,7 @@ for case in xrange(input()):
 
     N = input()
     for i in xrange(N):
-        colors.append(raw_input())
+        colors.append(raw_input().strip())
         con.append({})
 
     for i in xrange(N - 1):
