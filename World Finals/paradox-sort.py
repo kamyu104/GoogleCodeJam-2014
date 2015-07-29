@@ -3,8 +3,8 @@
 # Google Code Jam 2014 World Finals - Problem D. Paradox Sort
 # https://code.google.com/codejam/contest/7214486/dashboard#s=p3
 #
-# Time:  O(?)
-# Space: O(?)
+# Time:  O(N^2 * N!)
+# Space: O(N)
 #
 
 def dfs(i, removed, visited):
