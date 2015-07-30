@@ -11,7 +11,7 @@ def count_swaps(pos):
     nswaps = 0
     for i in pos:
         if i % 2 == 0:
-            nswaps = nswaps + 1
+            nswaps += 1
     return nswaps
 
 
@@ -67,5 +67,5 @@ for case in xrange(input()):
     N = input()
     M = []
     for i in xrange(2 * N):
-        M.append(list(raw_input()))
+        M.append(list(raw_input().strip()))
     print "Case #%d: %s" % (case+1, checkboard_matrix(M, N))
