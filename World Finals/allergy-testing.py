@@ -6,6 +6,8 @@
 # Time:  O(log^6 N)
 # Space: O(1)
 #
+# Combinatorial Solution
+#
 
 def nCk(n, k):
     if k > n:
