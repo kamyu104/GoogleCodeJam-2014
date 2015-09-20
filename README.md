@@ -1,5 +1,5 @@
 # Google Code Jam 2014
-Python solutions of Google Code Jam 2014
+Python solutions of Google Code Jam 2014.
 
 * [Qualification Round](https://github.com/kamyu104/GoogleCodeJam-2014#qualification-round)
 * [Round 1A](https://github.com/kamyu104/GoogleCodeJam-2014#round-1a)
