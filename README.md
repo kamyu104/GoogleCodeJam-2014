@@ -1,8 +1,4 @@
-# Google Code Jam 2014
-
-![Language](https://img.shields.io/badge/language-Python%20-orange.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Progress](https://img.shields.io/badge/progress-6%20%2F%2027%20-ff69b4.svg)
+# [GoogleCodeJam 2014](https://code.google.com/codejam/contests.html) ![Language](https://img.shields.io/badge/language-Python%20-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kamyu104/GoogleCodeJam-2014/blob/master/LICENSE.md) ![Progress](https://img.shields.io/badge/progress-6%20%2F%2027%20-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014.
 
