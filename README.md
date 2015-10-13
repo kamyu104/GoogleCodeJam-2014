@@ -10,42 +10,31 @@ Python solutions of Google Code Jam 2014.
 * [Round 3](https://github.com/kamyu104/GoogleCodeJam-2014#round-3)
 * [World Finals](https://github.com/kamyu104/GoogleCodeJam-2014#world-finals)
 
-##Qualification Round
+## Qualification Round
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 
---
-
-##Round 1A
+## Round 1A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 
---
-
-##Round 1B
+## Round 1B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 
---
-
-##Round 1C
+## Round 1C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 
---
-
-##Round 2
+## Round 2
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 
---
-
-##Round 3
+## Round 3
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 
-
-##World Finals
+## World Finals
 You can relive the magic of the 2014 Code Jam World Finals by watching the [Live Stream Recording](https://www.youtube.com/watch?v=GYX3sn3Q_DQ) of the competition, problem explanations, interviews with Google and Code Jam engineers, and announcement of winners.
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
