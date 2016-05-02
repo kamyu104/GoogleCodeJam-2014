@@ -14,8 +14,8 @@ def part_elf():
     GCD = gcd(P, Q)
     P //= GCD
     Q //= GCD
-    gen = 0
     if Q > 0 and (Q & (Q - 1)) == 0:
+        gen = 0
         while P < Q:
             P *= 2
             gen += 1
