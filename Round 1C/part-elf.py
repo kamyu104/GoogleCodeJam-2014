@@ -23,5 +23,6 @@ def part_elf():
 
     return "impossible"
 
+
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, part_elf())
