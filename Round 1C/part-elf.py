@@ -12,17 +12,14 @@ from fractions import gcd
 def part_elf():
     P, Q = map(int, raw_input().strip().split('/'))
     GCD = gcd(P, Q)
-    P /= GCD
-    Q /= GCD
-    ans = 0
+    P //= GCD
+    Q //= GCD
+    gen = 0
     if Q > 0 and (Q & (Q - 1)) == 0:
-        while Q > 1:
-            if P == 1:
-                ans += 1
-            else:
-                P /= 2
-            Q /= 2
-        return ans
+        while P < Q:
+            P *= 2
+            gen += 1
+        return gen
 
     return "impossible"
 
