@@ -14,7 +14,7 @@ def part_elf():
     GCD = gcd(P, Q)
     P //= GCD
     Q //= GCD
-    if Q > 0 and (Q & (Q - 1)) == 0:
+    if Q > 0 and (Q & (Q - 1)) == 0:  # Q is power of 2.
         gen = 0
         while P < Q:
             P *= 2
