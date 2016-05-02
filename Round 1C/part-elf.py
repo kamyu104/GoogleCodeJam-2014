@@ -3,7 +3,7 @@
 # Google Code Jam 2016 Round 1C - Problem A. Part Elf
 # https://code.google.com/codejam/contest/3004486/dashboard#s=p0
 #
-# Time:  O(logn)
+# Time:  O(logQ)
 # Space: O(1)
 #
 
