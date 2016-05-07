@@ -26,7 +26,7 @@ Python solutions of Google Code Jam 2014.
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Part Elf](https://code.google.com/codejam/contest/3004486/dashboard#s=p0)| [Python](./Round 1C/part-elf.py)| _O(logQ)_ | _O(1)_ | Easy | | Math |
-|B| [Reordering Train Cars](https://code.google.com/codejam/contest/3004486/dashboard#s=p1)| [Python](./Round 1C/reordring-train-cars.py)| _O(L)_ | _O(1)_ | Medium | | Math |
+|B| [Reordering Train Cars](https://code.google.com/codejam/contest/3004486/dashboard#s=p1)| [Python](./Round 1C/reordering-train-cars.py)| _O(L)_ | _O(1)_ | Medium | | Math |
 
 ## Round 2
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
