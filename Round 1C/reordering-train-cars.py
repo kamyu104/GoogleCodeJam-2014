@@ -68,20 +68,20 @@ def reordering_train_cars():
     while len(begin) > 0:
         # Form each disjoint group.
         _, i = begin.popitem()
-        first, last = cars[i][0], cars[i][-1]
-        del end[last]
+        front, back = cars[i][0], cars[i][-1]
+        del end[back]
 
-        while last in begin:
-            last = cars[begin.pop(last)][-1]
-            del end[last]
+        while back in begin:
+            back = cars[begin.pop(back)][-1]
+            del end[back]
         
-        while first in end:
-            first = cars[end.pop(first)][0]
-            del begin[first]
+        while front in end:
+            front = cars[end.pop(front)][0]
+            del begin[front]
 
         # All occurrences of the same character
         # should be adjacent to each other.
-        if first == last:
+        if front == back:
             return 0
 
         num_groups += 1
