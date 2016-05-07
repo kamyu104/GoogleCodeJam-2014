@@ -4,7 +4,7 @@
 # https://code.google.com/codejam/contest/3004486/dashboard#s=p1
 #
 # Time:  O(L), L is the set of connected Cars' length.
-# Space: O(N)
+# Space: O(1)
 #
 
 from collections import defaultdict
