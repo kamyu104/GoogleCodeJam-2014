@@ -65,7 +65,7 @@ def reordering_train_cars():
         if c not in begin and c not in end:
             num_groups += 1
 
-    while len(begin) > 0:
+    while begin:
         # Form each disjoint group.
         _, i = begin.popitem()
         front, back = cars[i][0], cars[i][-1]
