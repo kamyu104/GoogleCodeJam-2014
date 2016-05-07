@@ -21,10 +21,10 @@ def collapse(s):
 
 def reordering_train_cars():
     N = int(input())
-    cars = map(collapse, raw_input().strip().split())
+    strs = map(collapse, raw_input().strip().split())
     
     begin, end, middle, single_chars = {}, {}, {}, defaultdict(int)
-    for i, s in enumerate(cars):
+    for i, s in enumerate(strs):
         if len(s) == 1:
             single_chars[s[0]] += 1
         else:
@@ -68,15 +68,15 @@ def reordering_train_cars():
     while len(begin) > 0:
         # Form each disjoint group.
         _, i = begin.popitem()
-        s = cars[i]
+        s = strs[i]
         del end[s[-1]]
 
         while s[-1] in begin:
-            s += cars[begin.pop(s[-1])]
+            s += strs[begin.pop(s[-1])]
             del end[s[-1]]
         
         while s[0] in end:
-            s = cars[end.pop(s[0])] + s
+            s = strs[end.pop(s[0])] + s
             del begin[s[0]]
 
         # All occurrences of the same character
