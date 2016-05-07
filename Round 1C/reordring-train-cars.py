@@ -10,16 +10,18 @@
 from collections import defaultdict
 
 # Collapse strings.
-def unique(s):
-    r = s[0] 
-    for i in xrange(1, len(s)):
-        if s[i] != r[-1]:
-            r += s[i]
-    return r
+def collapse(s):
+    chars = list(s)
+    collapsed_chars = [chars[0]]
+    for i in xrange(1, len(chars)):
+        if chars[i] != collapsed_chars[-1]:
+            collapsed_chars += chars[i]
+    return "".join(collapsed_chars)
+
 
 def reordring_train_cars():
     N = int(input())
-    cars = map(unique, raw_input().strip().split())
+    cars = map(collapse, raw_input().strip().split())
     
     begin, end, middle, single_chars = {}, {}, {}, defaultdict(int)
     for i, s in enumerate(cars):
