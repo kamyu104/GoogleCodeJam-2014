@@ -81,7 +81,7 @@ def reordering_train_cars():
 
         # All occurrences of the same character
         # should be adjacent to each other.
-        if len(s) > 1 and s[0] == s[-1]:
+        if s[0] == s[-1]:
             return 0
 
         num_groups += 1
