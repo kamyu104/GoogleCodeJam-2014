@@ -19,7 +19,7 @@ def collapse(s):
     return "".join(collapsed_chars)
 
 
-def reordring_train_cars():
+def reordering_train_cars():
     N = int(input())
     cars = map(collapse, raw_input().strip().split())
     
@@ -99,5 +99,5 @@ for i in xrange(1, 105):
     factorials.append((factorials[-1] * i) % MOD)
 
 for case in xrange(input()):
-    print 'Case #%d: %s' % (case+1, reordring_train_cars())
+    print 'Case #%d: %s' % (case+1, reordering_train_cars())
 
