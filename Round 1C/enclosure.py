@@ -53,5 +53,4 @@ def enclosure():
 
     
 for case in xrange(input()):
-    
     print 'Case #%d: %s' % (case+1, enclosure())
