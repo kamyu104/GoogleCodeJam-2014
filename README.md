@@ -1,4 +1,4 @@
-# [GoogleCodeJam 2014](https://code.google.com/codejam/contests.html) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-8%20%2F%2027-ff69b4.svg)
+# [GoogleCodeJam 2014](https://code.google.com/codejam/contests.html) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-9%20%2F%2027-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014.
 
@@ -27,6 +27,7 @@ Python solutions of Google Code Jam 2014.
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Part Elf](https://code.google.com/codejam/contest/3004486/dashboard#s=p0)| [Python](./Round 1C/part-elf.py)| _O(logQ)_ | _O(1)_ | Easy | | Math |
 |B| [Reordering Train Cars](https://code.google.com/codejam/contest/3004486/dashboard#s=p1)| [Python](./Round 1C/reordering-train-cars.py)| _O(L)_ | _O(1)_ | Medium | | Math |
+|C| [Enclosure](https://code.google.com/codejam/contest/3004486/dashboard#s=p2)| [Python](./Round 1C/enclosure.py)| _O(N^2 * M)_ | _O(1)_ | Hard | | Greedy, Math |
 
 ## Round 2
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
