@@ -3,7 +3,7 @@
 # Google Code Jam 2014 World Finals - Problem E. Allergy Testing
 # https://code.google.com/codejam/contest/7214486/dashboard#s=p4
 #
-# Time:  O(log^6 N)
+# Time:  O((logN)^3)
 # Space: O(1)
 #
 # Combinatorial Solution
