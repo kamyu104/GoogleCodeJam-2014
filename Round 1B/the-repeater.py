@@ -35,8 +35,7 @@ def find_kth_largest(nums, k):
             left = new_pivot_idx + 1
 
 
-# Run-length Encoding.
-def encode(s):
+def run_length_encoding(s):
     encode_str = [[1, s[0]]]
     for i in xrange(1, len(s)):
         if s[i] != encode_str[-1][1]:
@@ -49,7 +48,7 @@ def encode(s):
 def the_repeater():
     strs = []
     for _ in xrange(input()):
-        strs.append(encode(raw_input().strip()))
+        strs.append(run_length_encoding(raw_input().strip()))
 
     for str in strs:
         if len(str) != len(strs[0]):
