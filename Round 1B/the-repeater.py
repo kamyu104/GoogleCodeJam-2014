@@ -3,10 +3,38 @@
 # Google Code Jam 2016 Round 1B - Problem A. The Repeater
 # https://code.google.com/codejam/contest/2994486/dashboard#s=p0
 #
-# Time:  O(X * NlogN), N is the number of strings,
-#                      X is the number of characters.
+# Time:  O(X * N), N is the number of strings,
+#                  X is the number of characters.
 # Space: O(X * N)
 #
+
+from random import randint
+
+def find_kth_largest(nums, k):
+    left, right = 0, len(nums) - 1
+    while left <= right:
+        pivot_idx = randint(left, right)
+        new_pivot_idx = partition_around_pivot(left, right, pivot_idx, nums)
+        if new_pivot_idx == k - 1:
+            return nums[new_pivot_idx]
+        elif new_pivot_idx > k - 1:
+            right = new_pivot_idx - 1
+        else:  # new_pivot_idx < k - 1.
+            left = new_pivot_idx + 1
+
+
+def partition_around_pivot(left, right, pivot_idx, nums):
+    pivot_value = nums[pivot_idx]
+    new_pivot_idx = left
+    nums[pivot_idx], nums[right] = nums[right], nums[pivot_idx]
+    for i in xrange(left, right):
+        if nums[i] > pivot_value:
+            nums[i], nums[new_pivot_idx] = nums[new_pivot_idx], nums[i]
+            new_pivot_idx += 1
+        
+    nums[right], nums[new_pivot_idx] = nums[new_pivot_idx], nums[right]
+    return new_pivot_idx
+
 
 # Run-length Encoding.
 def encode(s):
@@ -34,9 +62,12 @@ def the_repeater():
     move = 0
     for j in xrange(len(strs[0])):  # X times.
         freqs = [strs[i][j][0] for i in xrange(len(strs))]  # N times.
-        freqs.sort()  # NlogN times
+
         # Median minimizes the sum of absolute deviations.
-        median = freqs[len(freqs)/2]
+        # freqs.sort()  # O(NlogN)
+        # median = freqs[len(freqs)/2]
+        median = find_kth_largest(freqs, len(freqs)/2 + 1)  # O(N) on average.
+
         for freq in freqs:
             move += abs(freq - median)
 
