@@ -4,7 +4,7 @@
 # https://code.google.com/codejam/contest/2994486/dashboard#s=p0
 #
 # Time:  O(X * N), N is the number of strings,
-#                  X is the number of characters.
+#                  X is the number of characters in the frequency string.
 # Space: O(X * N)
 #
 
