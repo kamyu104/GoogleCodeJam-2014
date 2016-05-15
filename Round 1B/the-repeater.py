@@ -50,11 +50,11 @@ def the_repeater():
     for _ in xrange(input()):
         strs.append(run_length_encoding(raw_input().strip()))
 
-    for str in strs:
-        if len(str) != len(strs[0]):
+    for s in strs:
+        if len(s) != len(strs[0]):
             return "Fegla Won"
-        for i in xrange(len(str)):
-            if str[i][1] != strs[0][i][1]:
+        for i in xrange(len(s)):
+            if s[i][1] != strs[0][i][1]:
                 return "Fegla Won"
 
     move = 0
