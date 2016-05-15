@@ -21,6 +21,7 @@ Python solutions of Google Code Jam 2014.
 ## Round 1B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [The Repeater](https://code.google.com/codejam/contest/2994486/dashboard#s=p0)| [Python](./Round 1B/the-repeater.py)| _O(X * NlogN)_ | _O(X)_ | Easy | | Math |
 
 ## Round 1C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
