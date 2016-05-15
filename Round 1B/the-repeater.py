@@ -11,6 +11,18 @@
 from random import randint
 
 def find_kth_largest(nums, k):
+    def partition_around_pivot(left, right, pivot_idx, nums):
+        pivot_value = nums[pivot_idx]
+        new_pivot_idx = left
+        nums[pivot_idx], nums[right] = nums[right], nums[pivot_idx]
+        for i in xrange(left, right):
+            if nums[i] > pivot_value:
+                nums[i], nums[new_pivot_idx] = nums[new_pivot_idx], nums[i]
+                new_pivot_idx += 1
+            
+        nums[right], nums[new_pivot_idx] = nums[new_pivot_idx], nums[right]
+        return new_pivot_idx
+
     left, right = 0, len(nums) - 1
     while left <= right:
         pivot_idx = randint(left, right)
@@ -21,19 +33,6 @@ def find_kth_largest(nums, k):
             right = new_pivot_idx - 1
         else:  # new_pivot_idx < k - 1.
             left = new_pivot_idx + 1
-
-
-def partition_around_pivot(left, right, pivot_idx, nums):
-    pivot_value = nums[pivot_idx]
-    new_pivot_idx = left
-    nums[pivot_idx], nums[right] = nums[right], nums[pivot_idx]
-    for i in xrange(left, right):
-        if nums[i] > pivot_value:
-            nums[i], nums[new_pivot_idx] = nums[new_pivot_idx], nums[i]
-            new_pivot_idx += 1
-        
-    nums[right], nums[new_pivot_idx] = nums[new_pivot_idx], nums[right]
-    return new_pivot_idx
 
 
 # Run-length Encoding.
