@@ -33,7 +33,7 @@ def f(A, B, K):
     #
     # Besides:
     # - ceil(A/2) = (A+1) / 2
-    # - floor(A/2) = A /2
+    # - floor(A/2) = A / 2
     #
     lookup[(A, B, K)] = f((A+1)>>1, (B+1)>>1, (K+1)>>1) + \
                         f((A+1)>>1, B>>1, (K+1)>>1) + \
