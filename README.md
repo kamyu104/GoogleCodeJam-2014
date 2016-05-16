@@ -22,7 +22,7 @@ Python solutions of Google Code Jam 2014.
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [The Repeater](https://code.google.com/codejam/contest/2994486/dashboard#s=p0)| [Python](./Round 1B/the-repeater.py)| _O(X * N)_ | _O(X * N)_ | Easy | | Math |
-|B| [New Lottery Game](https://code.google.com/codejam/contest/2994486/dashboard#s=p1)| [Python](./Round 1B/new-lottery-game.py)| _O(log(max(A, B)))_ | _O(log(max(A, B)))_ | Medium | | Memoization |
+|B| [New Lottery Game](https://code.google.com/codejam/contest/2994486/dashboard#s=p1)| [Python](./Round 1B/new-lottery-game.py)| _O(log(max(A, B)))_ | _O(log(max(A, B)))_ | Medium | | Math, Memoization |
 
 ## Round 1C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
