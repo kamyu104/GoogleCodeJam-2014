@@ -37,7 +37,6 @@ def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visi
         # Abandon HEAD and go back up in the ACTIVE stack.
         DEAD.add(HEAD)
         temp.append(HEAD)
-        visiting.discard(HEAD)
         ACTIVE.pop()
 
         if not connectivity_check(neighbors, source, DEAD):  # O(N) time
@@ -47,7 +46,6 @@ def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visi
     while temp:
         HEAD = temp.pop()
         DEAD.discard(HEAD)
-        visiting.add(HEAD)
         ACTIVE.append(HEAD)
 
     return best
@@ -68,7 +66,7 @@ def the_bored_traveling_salesman():
         neighbors[i - 1].add(j - 1)
         neighbors[j - 1].add(i - 1)
 
-    ACTIVE, DEAD, visiting = [root], set(), set()
+    ACTIVE, DEAD, visiting = [root], set(), set([root])
     res = [zipcodes[root]]
     next = None
     while ACTIVE:  # O(N) time
