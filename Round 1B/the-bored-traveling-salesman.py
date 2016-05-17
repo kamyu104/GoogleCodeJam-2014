@@ -20,9 +20,6 @@ def connectivity_check(neighbors, source, DEAD):
     return len(visited) == len(neighbors) - len(DEAD)
 
 
-# ACTIVE: The stack of nodes along our current path (originating from the source node).
-# HEAD: The node at the top of the ACTIVE stack, which is the node we are currently on.
-# DEAD: The set of nodes we’ve already visited and left (which we may never visit again).
 def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visiting):
     best = None
     temp = []
@@ -69,6 +66,8 @@ def the_bored_traveling_salesman():
         neighbors[i - 1].add(j - 1)
         neighbors[j - 1].add(i - 1)
 
+    # ACTIVE: The stack of nodes along our current path (originating from the source node).
+    # DEAD: The set of nodes we’ve already visited and left (which we may never visit again).
     ACTIVE, DEAD, visiting = [root], set(), set([root])
     res = [zipcodes[root]]
     next = None
