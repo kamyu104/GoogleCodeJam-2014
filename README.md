@@ -1,4 +1,4 @@
-# [GoogleCodeJam 2014](https://code.google.com/codejam/contests.html) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-11%20%2F%2027-ff69b4.svg)
+# [GoogleCodeJam 2014](https://code.google.com/codejam/contests.html) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-12%20%2F%2027-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014.
 
@@ -23,6 +23,7 @@ Python solutions of Google Code Jam 2014.
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [The Repeater](https://code.google.com/codejam/contest/2994486/dashboard#s=p0)| [Python](./Round 1B/the-repeater.py)| _O(X * N)_ | _O(X * N)_ | Easy | | Math |
 |B| [New Lottery Game](https://code.google.com/codejam/contest/2994486/dashboard#s=p1)| [Python](./Round 1B/new-lottery-game.py)| _O(log(max(A, B)))_ | _O(log(max(A, B)))_ | Medium | | Math, DP, Memoization |
+|C| [The Bored Traveling Salesman](https://code.google.com/codejam/contest/2994486/dashboard#s=p2)| [Python](./Round 1B/the-bored-traveling-salesman.py)| _O(N^3)_ | _O(M + N)_ | Hard | | Greedy |
 
 ## Round 1C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
