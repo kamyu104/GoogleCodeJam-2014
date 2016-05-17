@@ -20,7 +20,7 @@ def connectivity_check(neighbors, source, DEAD):
     return len(visited) == len(neighbors) - len(DEAD)
  
 
-def next_smallest_feasible_node_to_visit(zipcode, neighbors, ACTIVE, DEAD, visiting):
+def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visiting):
     best = None
     temp = []
     source = ACTIVE[0]
@@ -31,7 +31,7 @@ def next_smallest_feasible_node_to_visit(zipcode, neighbors, ACTIVE, DEAD, visit
         for i in neighbors[HEAD]:  # O(N) time
             if i in visiting or i in DEAD:
                 continue
-            if best is None or zipcode[i] < zipcode[best]:
+            if best is None or zipcodes[i] < zipcodes[best]:
                 best = i
 
         # Abandon HEAD and go back up in the ACTIVE stack.
@@ -56,10 +56,10 @@ def next_smallest_feasible_node_to_visit(zipcode, neighbors, ACTIVE, DEAD, visit
 def the_bored_traveling_salesman():
     N, M = map(int, raw_input().strip().split())
 
-    root, zipcode = None, []
+    root, zipcodes = None, []
     for i in xrange(N):
-        zipcode.append(raw_input().strip())
-        if root is None or zipcode[i] < zipcode[root]:
+        zipcodes.append(raw_input().strip())
+        if root is None or zipcodes[i] < zipcodes[root]:
             root = i  # The node with the smallest zip code.
 
     neighbors = [set() for _ in xrange(N)]
@@ -69,12 +69,12 @@ def the_bored_traveling_salesman():
         neighbors[j - 1].add(i - 1)
 
     ACTIVE, DEAD, visiting = [root], set(), set()
-    res = [zipcode[root]]
+    res = [zipcodes[root]]
     next = None
     while ACTIVE:  # O(N) time
         HEAD = ACTIVE[-1]
         if next is None:
-            next = next_smallest_feasible_node_to_visit(zipcode, neighbors, ACTIVE, DEAD, visiting)
+            next = next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visiting)
         if next is None or next not in neighbors[HEAD]:
             # Leave the HEAD node.
             DEAD.add(HEAD)
@@ -84,7 +84,7 @@ def the_bored_traveling_salesman():
             # Visit the next node.
             visiting.add(next)
             ACTIVE.append(next)
-            res += zipcode[next]
+            res += zipcodes[next]
             next = None
 
     return "".join(res)
