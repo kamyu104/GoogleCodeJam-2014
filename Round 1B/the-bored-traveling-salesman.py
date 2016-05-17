@@ -18,8 +18,11 @@ def connectivity_check(neighbors, source, DEAD):
 
     dfs(source)
     return len(visited) == len(neighbors) - len(DEAD)
- 
 
+
+# HEAD: The node at the top of the ACTIVE stack, which is the node we are currently on.
+# DEAD: The set of nodes we’ve already visited and left (which we may never visit again).
+# ACTIVE: The stack of nodes along our current path (originating from the source node).
 def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visiting):
     best = None
     temp = []
