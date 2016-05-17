@@ -60,7 +60,7 @@ def the_bored_traveling_salesman():
     for i in xrange(N):
         zipcode.append(raw_input().strip())
         if root is None or zipcode[i] < zipcode[root]:
-            root = i
+            root = i  # The node with the smallest zip code.
 
     neighbors = [set() for _ in xrange(N)]
     for _ in xrange(M):
