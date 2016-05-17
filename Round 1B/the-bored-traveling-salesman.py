@@ -49,6 +49,7 @@ def next_smallest_feasible_node_to_visit(zipcode, neighbors, ACTIVE, DEAD, visit
         DEAD.discard(HEAD)
         visiting.add(HEAD)
         ACTIVE.append(HEAD)
+
     return best
 
 
