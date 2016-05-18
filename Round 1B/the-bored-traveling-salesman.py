@@ -37,6 +37,7 @@ def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visi
         # Abandon HEAD and go back up in the ACTIVE stack.
         DEAD.add(HEAD)
         temp.append(HEAD)
+        # visiting.discard(HEAD)
         ACTIVE.pop()
 
         if not connectivity_check(neighbors, source, DEAD):  # O(N) time
@@ -46,6 +47,7 @@ def next_smallest_feasible_node_to_visit(zipcodes, neighbors, ACTIVE, DEAD, visi
     while temp:
         HEAD = temp.pop()
         DEAD.discard(HEAD)
+        # visiting.add(HEAD)
         ACTIVE.append(HEAD)
 
     return best
