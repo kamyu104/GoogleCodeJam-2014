@@ -69,7 +69,7 @@ def the_bored_traveling_salesman():
         neighbors[j - 1].add(i - 1)
 
     # ACTIVE: The stack of nodes along our current path (originating from the source node).
-    # DEAD: The set of nodes we’ve already visited and left (which we may never visit again).
+    # DEAD: The set of nodes we've already visited and left (which we may never visit again).
     # visiting: The set of nodes along our current path (originating from the source node).
     ACTIVE, DEAD, visiting = [root], set(), set([root])
     res = [zipcodes[root]]
