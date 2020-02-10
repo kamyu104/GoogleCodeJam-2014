@@ -15,10 +15,17 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Qualification Round
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Magic Trick](https://code.google.com/codejam/contest/2974486/dashboard#s=p0)| | | | | | |
+|B| [Cookie Clicker Alpha](https://code.google.com/codejam/contest/2974486/dashboard#s=p1)| | | | | | |
+|C| [Minesweeper Master](https://code.google.com/codejam/contest/2974486/dashboard#s=p2)| | | | | | |
+|D| [Deceitful War](https://code.google.com/codejam/contest/2974486/dashboard#s=p3)| | | | | | |
 
 ## Round 1A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Charging Chaos](https://code.google.com/codejam/contest/2984486/dashboard#s=p0)| | | | | | |
+|B| [Full Binary Tree](https://code.google.com/codejam/contest/2984486/dashboard#s=p1)| | | | | | |
+|C| [Proper Shuffle](https://code.google.com/codejam/contest/2984486/dashboard#s=p2)| | | | | | |
 
 ## Round 1B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
@@ -37,10 +44,17 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Round 2
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Data Packing](https://code.google.com/codejam/contest/3014486/dashboard#s=p0)| | | | | | |
+|B| [Up and Down](https://code.google.com/codejam/contest/3014486/dashboard#s=p1)| | | | | | |
+|C| [Don't Break The Nile](https://code.google.com/codejam/contest/3014486/dashboard#s=p2)| | | | | | |
+|D| [Trie Sharding](https://code.google.com/codejam/contest/3014486/dashboard#s=p3)| | | | | | |
 
 ## Round 3
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Magical, Marvelous Tour](https://code.google.com/codejam/contest/3024486/dashboard#s=p0)| | | | | | |
+|B| [Last Hit](https://code.google.com/codejam/contest/3024486/dashboard#s=p1)| | | | | | |
+|C| [Crime House](https://code.google.com/codejam/contest/3024486/dashboard#s=p2)| | | | | | |
 |D| [Willow](https://code.google.com/codejam/contest/3024486/dashboard#s=p3)| | | | Very Hard | | |
 
 ## World Finals
