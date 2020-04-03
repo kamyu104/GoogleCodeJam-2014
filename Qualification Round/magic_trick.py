@@ -12,7 +12,7 @@ def magic_trick():
     for i in xrange(2):
         ANS[i] = input()-1
         for _ in xrange(4):
-            ARR[i].append(map(int, raw_input().strip().split()))
+            ARR[i].append(raw_input().strip().split())
     result = set(ARR[0][ANS[0]]) & set(ARR[1][ANS[1]])
     if not result:
         return "Volunteer cheated!"
