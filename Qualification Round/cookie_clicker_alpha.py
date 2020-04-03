@@ -13,6 +13,7 @@ def cookie_clicker_alpha():
     # rate >= F*X/C - F
     # => 2 + (times of loop) * F >= F*X/C - F
     # => times of loop >= X/C - 1 - 2/F
+    # => min times of loop <= ceil(X/C - 1 - 2/F)
     while C/rate+X/(rate+F) < X/rate:
         result += C/rate
         rate += F
