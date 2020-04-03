@@ -18,7 +18,7 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 |A| [Magic Trick](https://code.google.com/codejam/contest/2974486/dashboard#s=p0)| [Python](./Qualification%20Round/magic_trick.py) | _O(1)_  | _O(1)_  | Easy | | Set |
 |B| [Cookie Clicker Alpha](https://code.google.com/codejam/contest/2974486/dashboard#s=p1)| [Python](./Qualification%20Round/cookie_clicker_alpha.py) | _O(X / C)_  | _O(1)_  | Easy | | Math |
 |C| [Minesweeper Master](https://code.google.com/codejam/contest/2974486/dashboard#s=p2)| [Python](./Qualification%20Round/minesweeper_master.py) | _O(1)_  | _O(1)_ | Medium | | Enumeration |
-|D| [Deceitful War](https://code.google.com/codejam/contest/2974486/dashboard#s=p3)| [Python](./Qualification%20Round/minesweeper_master.py) | _O(NlogN)_  | _O(N)_ | Medium | | Sort |
+|D| [Deceitful War](https://code.google.com/codejam/contest/2974486/dashboard#s=p3)| [Python](./Qualification%20Round/deceitful_war.py) | _O(NlogN)_  | _O(N)_ | Medium | | Sort |
 
 ## Round 1A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
