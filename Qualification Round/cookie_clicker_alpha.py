@@ -11,9 +11,8 @@ def cookie_clicker_alpha():
     C, F, X = map(float, raw_input().strip().split())
     result, rate = 0.0, 2.0
     # rate >= F*X/C - F
-    # => 2 + (times of loop - 1) * F >= F*X/C - F
-    # => times of loop - 1 >= X/C - 1 - 2/F
-    # => times of loop >= X/C - 2/F
+    # => 2 + (times of loop) * F >= F*X/C - F
+    # => times of loop >= X/C - 1 - 2/F
     while C/rate+X/(rate+F) < X/rate:
         result += C/rate
         rate += F
