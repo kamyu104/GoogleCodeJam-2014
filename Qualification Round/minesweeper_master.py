@@ -3,7 +3,7 @@
 # Google Code Jam 2014 Qualification Round - Problem C. Minesweeper Master
 # https://code.google.com/codejam/contest/2974486/dashboard#s=p2
 #
-# Time:  O(1)
+# Time:  O(R * C)
 # Space: O(1)
 #
 
