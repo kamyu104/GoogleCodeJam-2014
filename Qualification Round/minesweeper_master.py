@@ -27,14 +27,7 @@ def minesweeper_master():
                 result[i][0] = '.'
                 result[i][1] = '.'
     elif ((R >= 3 and C >= 3)) and (empty == 4 or empty == 6 or empty >= 8):
-        if empty >= 2*C+2:
-            for i in xrange(R):
-                for j in xrange(max(min(empty-C*i, C), 0)):
-                    result[i][j] = '.'
-            if empty%C == 1:
-                result[empty//C][1] = '.'
-                result[empty//C-1][C-1] = '*'
-        else:
+        if empty < 2*C+2:
             for i in xrange(empty//2):
                 result[0][i] = '.'
                 result[1][i] = '.'
@@ -44,6 +37,13 @@ def minesweeper_master():
                 result[2][2] = '.'
                 result[0][empty//2-1] = '*'
                 result[1][empty//2-1] = '*'
+        else:
+            for i in xrange(R):
+                for j in xrange(max(min(empty-C*i, C), 0)):
+                    result[i][j] = '.'
+            if empty%C == 1:
+                result[empty//C][1] = '.'
+                result[empty//C-1][C-1] = '*'
     else:
         return "Impossible"
     result[0][0] = 'c'
