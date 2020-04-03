@@ -1,4 +1,4 @@
-# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-12%20%2F%2027-ff69b4.svg)
+# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-16%20%2F%2027-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A `4-minute` timer is set for the small dataset and a `8-minute` timer is set for the large dataset this year.
 
@@ -15,10 +15,10 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Qualification Round
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Magic Trick](https://code.google.com/codejam/contest/2974486/dashboard#s=p0)| | | | | | |
-|B| [Cookie Clicker Alpha](https://code.google.com/codejam/contest/2974486/dashboard#s=p1)| | | | | | |
-|C| [Minesweeper Master](https://code.google.com/codejam/contest/2974486/dashboard#s=p2)| | | | | | |
-|D| [Deceitful War](https://code.google.com/codejam/contest/2974486/dashboard#s=p3)| | | | | | |
+|A| [Magic Trick](https://code.google.com/codejam/contest/2974486/dashboard#s=p0)| [Python](./Qualification%20Round/magic_trick.py) | _O(1)_  | _O(1)_  | Easy | | Set |
+|B| [Cookie Clicker Alpha](https://code.google.com/codejam/contest/2974486/dashboard#s=p1)| [Python](./Qualification%20Round/cookie_clicker_alpha.py) | _O(X / C)_  | _O(1)_  | Easy | | Math |
+|C| [Minesweeper Master](https://code.google.com/codejam/contest/2974486/dashboard#s=p2)| [Python](./Qualification%20Round/minesweeper_master.py) | _O(1)_  | _O(1)_ | Medium | | Enumeration |
+|D| [Deceitful War](https://code.google.com/codejam/contest/2974486/dashboard#s=p3)| [Python](./Qualification%20Round/minesweeper_master.py) | _O(NlogN)_  | _O(N)_ | Medium | | Sort |
 
 ## Round 1A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
