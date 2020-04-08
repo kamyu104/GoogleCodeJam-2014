@@ -1,4 +1,4 @@
-# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-16%20%2F%2027-ff69b4.svg)
+# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-17%20%2F%2027-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A `4-minute` timer is set for the small dataset and a `8-minute` timer is set for the large dataset this year.
 
@@ -23,7 +23,7 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Round 1A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Charging Chaos](https://code.google.com/codejam/contest/2984486/dashboard#s=p0)| | | | | | |
+|A| [Charging Chaos](https://code.google.com/codejam/contest/2984486/dashboard#s=p0)| [Python](./Round%201A/charging_chaos.py) | _O(N^2)_  | _O(N)_  | Easy | | Bit Manipulation |
 |B| [Full Binary Tree](https://code.google.com/codejam/contest/2984486/dashboard#s=p1)| | | | | | |
 |C| [Proper Shuffle](https://code.google.com/codejam/contest/2984486/dashboard#s=p2)| | | | | | |
 
