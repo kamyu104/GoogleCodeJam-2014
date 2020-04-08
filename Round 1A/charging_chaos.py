@@ -16,10 +16,10 @@ def popcount(n):
 
 def charging_chaos():
     N, L = map(float, raw_input().strip().split())
-    OUTLETS = map(lambda x : int(x, 2), raw_input().strip().split())
+    OUTLETS = set(map(lambda x : int(x, 2), raw_input().strip().split()))
     DEVICES = set(map(lambda x : int(x, 2), raw_input().strip().split()))
     result = float("inf")
-    for i, outlet in enumerate(OUTLETS):
+    for outlet in OUTLETS:
         flips = next(iter(DEVICES))^outlet
         if set(x^flips for x in OUTLETS) == DEVICES:
             result = min(result, popcount(flips))
