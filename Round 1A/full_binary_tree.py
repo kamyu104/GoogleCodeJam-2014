@@ -20,8 +20,7 @@ def precompute_max_subtree_nodes(G, i, parent, nodes):
         if j == parent:
             continue
         nodes[i].children.append(j)
-        subtree_count = precompute_max_subtree_nodes(G, j, i, nodes)
-        nodes[i].top3.append((subtree_count, j))
+        nodes[i].top3.append((precompute_max_subtree_nodes(G, j, i, nodes), j))
         nodes[i].top3.sort(reverse=True)
         if len(nodes[i].top3) > 3:
             nodes[i].top3.pop()
