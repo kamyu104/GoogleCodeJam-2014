@@ -49,7 +49,8 @@ def full_binary_tree():
     precompute_max_subtree_nodes(G, 1, 0, nodes)
     return N-max_subtree_nodes(nodes, 1, 0)
 
+BASE = 6
 MAX_N = 1000
-setrecursionlimit(6+1+MAX_N)
+setrecursionlimit(BASE+1+MAX_N)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, full_binary_tree())
