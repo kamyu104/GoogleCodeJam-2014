@@ -15,19 +15,19 @@ class TreeNode(object):
         self.children = []
         self.top3 = []
 
-def precompute_dfs(G, i, parent, nodes):
+def precompute_max_subtree_nodes(G, i, parent, nodes):
     for j in G[i]:
         if j == parent:
             continue
         nodes[i].children.append(j)
-        subtree_count = precompute_dfs(G, j, i, nodes)
+        subtree_count = precompute_max_subtree_nodes(G, j, i, nodes)
         nodes[i].top3.append((subtree_count, j))
         nodes[i].top3.sort(reverse=True)
         if len(nodes[i].top3) > 3:
             nodes[i].top3.pop()
     return 1+sum(zip(*(nodes[i].top3))[0][:2]) if len(nodes[i].top3) >= 2 else 1
 
-def dfs(nodes, i, parent):
+def max_subtree_nodes(nodes, i, parent):
     if parent:
         parent_top3 = [(subtree_count, j) for subtree_count, j in nodes[parent].top3 if j != i]
         nodes[i].top3.append((1+sum(zip(*(parent_top3))[0][:2]) if len(parent_top3) >= 2 else 1, parent))
@@ -36,7 +36,7 @@ def dfs(nodes, i, parent):
             nodes[i].top3.pop()
     result = 1+sum(zip(*(nodes[i].top3))[0][:2]) if len(nodes[i].top3) >= 2 else 1
     for j in nodes[i].children:
-        result = max(result, dfs(nodes, j, i))
+        result = max(result, max_subtree_nodes(nodes, j, i))
     return result
 
 def full_binary_tree():
@@ -47,8 +47,8 @@ def full_binary_tree():
         G[X].append(Y)
         G[Y].append(X)
     nodes = defaultdict(TreeNode)
-    precompute_dfs(G, 1, 0, nodes)
-    return N-dfs(nodes, 1, 0)
+    precompute_max_subtree_nodes(G, 1, 0, nodes)
+    return N-max_subtree_nodes(nodes, 1, 0)
 
 MAX_N = 1000
 setrecursionlimit(6+1+MAX_N)
