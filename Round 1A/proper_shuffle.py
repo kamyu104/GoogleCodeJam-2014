@@ -23,9 +23,7 @@ def proper_shuffle():
 MAX_N = 1000
 P_MOVE = 1.0/MAX_N
 P_STAY = 1.0-P_MOVE
-F = [[0.0]*MAX_N for i in xrange(MAX_N)]
-for i in xrange(MAX_N):
-    F[i][i] = 1.0
+F = [[float(i == j) for j in xrange(MAX_N)] for i in xrange(MAX_N)]
 for i in xrange(MAX_N):
     print >>stderr, i
     for j in xrange(MAX_N):
