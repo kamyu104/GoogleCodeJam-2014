@@ -21,15 +21,14 @@ def proper_shuffle():
 MAX_N = 1000
 P_MOVE = 1.0/MAX_N
 P_STAY = 1.0-P_MOVE
-f = [[float(i == j) for j in xrange(MAX_N)] for i in xrange(MAX_N)]
-g, h = [1.0]*MAX_N, [0.0]*MAX_N
+dp1 = [[float(i == j) for j in xrange(MAX_N)] for i in xrange(MAX_N)]
+dp2 = [0.0]*MAX_N
+p_stay_to_the_power_k = 1.0
 for k in xrange(MAX_N):
     for i in xrange(MAX_N):
-        h[i] += f[i][k]*g[i]*P_MOVE
-        g[i] *= P_STAY
-        f[i][k] = (P_MOVE-h[i]) / g[i]
-for i in xrange(MAX_N):
-    for j in xrange(MAX_N):
-        f[i][j] = f[i][j]*g[i] + h[i]
+        dp2[i] += dp1[i][k] * p_stay_to_the_power_k * P_MOVE
+        dp1[i][k] = (P_MOVE-dp2[i]) / (p_stay_to_the_power_k * P_STAY)
+    p_stay_to_the_power_k *= P_STAY
+f = [[dp1[i][j] * p_stay_to_the_power_k + dp2[i] for j in xrange(MAX_N)] for i in xrange(MAX_N)]
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
