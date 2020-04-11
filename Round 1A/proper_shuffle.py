@@ -14,7 +14,7 @@ from math import log
 def proper_shuffle():
     N = input()
     P = map(int, raw_input().strip().split())
-    z_good_prob,z_bad_prob = -N*log(N), 0.0
+    z_good_prob, z_bad_prob = -N*log(N), 0.0
     for i in xrange(N):
         z_bad_prob += log(F[i][P[i]])
     return "GOOD" if z_good_prob > z_bad_prob else "BAD"
