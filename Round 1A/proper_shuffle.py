@@ -8,7 +8,6 @@
 # Space: O(N^2)
 #
 
-from sys import stderr
 from math import log
 
 def proper_shuffle():
