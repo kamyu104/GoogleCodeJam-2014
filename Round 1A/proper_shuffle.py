@@ -25,11 +25,11 @@ f = [[float(i == j) for j in xrange(MAX_N)] for i in xrange(MAX_N)]
 g, h = [1.0]*MAX_N, [0.0]*MAX_N
 for k in xrange(MAX_N):
     for i in xrange(MAX_N):
-        h[i] += g[i]*f[i][k]*P_MOVE
+        h[i] += f[i][k]*g[i]*P_MOVE
         g[i] *= P_STAY
         f[i][k] = (P_MOVE-h[i]) / g[i]
 for i in xrange(MAX_N):
     for j in xrange(MAX_N):
-        f[i][j] = g[i]*f[i][j] + h[i]
+        f[i][j] = f[i][j]*g[i] + h[i]
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
