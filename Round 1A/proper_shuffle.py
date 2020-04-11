@@ -27,9 +27,10 @@ F = [[float(i == j) for j in xrange(MAX_N)] for i in xrange(MAX_N)]
 for i in xrange(MAX_N):
     print >>stderr, i
     for j in xrange(MAX_N):
-        if j != i:
-            for k in xrange(MAX_N):
-                F[j][k] = F[j][k]*P_STAY + F[i][k]*P_MOVE
+        if j == i:
+            continue
+        for k in xrange(MAX_N):
+            F[j][k] = F[j][k]*P_STAY + F[i][k]*P_MOVE
     for k in xrange(MAX_N):
         F[i][k] = P_MOVE
 print >>open("proper_shuffle_precompute.txt", "w"), F
