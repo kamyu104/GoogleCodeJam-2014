@@ -26,14 +26,13 @@ g = [0.0]*N
 for i in xrange(N):
     p_stay_to_the_power_j = 1.0
     for j in xrange(N):
-        g[i] += f[i][j] * p_stay_to_the_power_j * P_MOVE
-        f[i][j] = P_MOVE-g[i]
+        g[i] += f[i][j] * p_stay_to_the_power_j
+        f[i][j] = 1.0-g[i]
         p_stay_to_the_power_j *= P_STAY
 for i in xrange(N):
     p_stay_to_the_power_n_m_1_m_j = p_stay_to_the_power_j/P_STAY
     for j in xrange(N):
-        f[i][j] *= p_stay_to_the_power_n_m_1_m_j
-        f[i][j] += g[i]
+        f[i][j] = (f[i][j] * p_stay_to_the_power_n_m_1_m_j + g[i]) * P_MOVE
         p_stay_to_the_power_n_m_1_m_j /= P_STAY
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
