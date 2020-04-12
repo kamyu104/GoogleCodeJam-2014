@@ -21,9 +21,9 @@ def proper_shuffle():
 N = 1000
 P_MOVE = 1.0/N
 P_STAY = 1.0-P_MOVE
-p_stay_to_the_power = [1.0]
+p_stay_to_the_power = [1.0]*N
 for i in xrange(N-1):
-    p_stay_to_the_power.append(p_stay_to_the_power[-1]*P_STAY)
+    p_stay_to_the_power[i+1] = p_stay_to_the_power[i]*P_STAY
 accu = [[0.0]*N for _ in xrange(N)]
 for i in xrange(N):
     for j in xrange(N):
