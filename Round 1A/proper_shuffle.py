@@ -30,7 +30,7 @@ for i in xrange(N):
         f[i][j] = P_MOVE-g[i]
         p_stay_to_the_power_j *= P_STAY
 for i in xrange(N):
-    p_stay_to_the_power_n_m_1_m_j = P_STAY**(N-1)
+    p_stay_to_the_power_n_m_1_m_j = p_stay_to_the_power_j/P_STAY
     for j in xrange(N):
         f[i][j] *= p_stay_to_the_power_n_m_1_m_j
         f[i][j] += g[i]
