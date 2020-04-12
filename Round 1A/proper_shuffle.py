@@ -24,14 +24,14 @@ P_STAY = 1.0-P_MOVE
 f = [[float(i == j) for j in xrange(N)] for i in xrange(N)]
 g = [0.0]*N
 for i in xrange(N):
-    p_stay_to_the_power_k = 1.0
-    for k in xrange(N):
-        g[i] += f[i][k] * p_stay_to_the_power_k * P_MOVE
-        p_stay_to_the_power_k *= P_STAY
-        f[i][k] = (P_MOVE-g[i]) / p_stay_to_the_power_k
+    p_stay_to_the_power_j = 1.0
+    for j in xrange(N):
+        g[i] += f[i][j] * p_stay_to_the_power_j * P_MOVE
+        p_stay_to_the_power_j *= P_STAY
+        f[i][j] = (P_MOVE-g[i]) / p_stay_to_the_power_j
 for i in xrange(N):
     for j in xrange(N):
-        f[i][j] *= p_stay_to_the_power_k
+        f[i][j] *= p_stay_to_the_power_j
         f[i][j] += g[i]
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
