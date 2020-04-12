@@ -15,7 +15,7 @@ def proper_shuffle():
     S = map(int, raw_input().strip().split())
     log_good_prob, log_bad_prob = -N*log(N), 0.0
     for i in xrange(N):
-        log_bad_prob += log(f[S[i]][i])
+        log_bad_prob += log(f[S[i]][i])  # avoid prob underflow by log
     return "GOOD" if log_good_prob > log_bad_prob else "BAD"
 
 N = 1000
