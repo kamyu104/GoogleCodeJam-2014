@@ -24,7 +24,7 @@ q = 1.0-p
 q_pow = [1.0]*N
 for i in xrange(N-1):
     q_pow[i+1] = q_pow[i]*q
-f = [[p * (q_pow[i] + (1.0-(q_pow[i] if i <= j else 0.0)) * q_pow[N-1-j]) for j in xrange(N)] for i in xrange(N)]
+f = [[p * (q_pow[i] + q_pow[N-1-j] - (q_pow[N-1+i-j] if i <= j else 0.0)) for j in xrange(N)] for i in xrange(N)]
 assert(sum(map(lambda x: sum(x), f))/N == 1.0)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
