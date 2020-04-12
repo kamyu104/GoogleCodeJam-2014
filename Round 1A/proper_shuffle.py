@@ -27,9 +27,8 @@ for i in xrange(N-1):
 accu = [[0.0]*N for _ in xrange(N)]
 for i in xrange(N):
     for j in xrange(N):
-        accu[i][j] = accu[i][j-1] + (i == j) * p_stay_to_the_power[i]
-f = [[((1.0-accu[i][j]) * p_stay_to_the_power[N-1-j] + accu[i][N-1]) * P_MOVE
-       for j in xrange(N)] for i in xrange(N)]
+        accu[i][j] = accu[i][j-1] + (i == j)*p_stay_to_the_power[i]
+f = [[((1.0-accu[i][j])*p_stay_to_the_power[N-1-j] + accu[i][N-1]) * P_MOVE for j in xrange(N)] for i in xrange(N)]
 assert(sum(map(lambda x: sum(x), f))/N == 1.0)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
