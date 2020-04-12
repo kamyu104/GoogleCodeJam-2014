@@ -11,7 +11,7 @@
 from math import log
 
 def proper_shuffle():
-    N = input()
+    N = input()  # N is 1000 for each case
     S = map(int, raw_input().strip().split())
     log_good_prob, log_bad_prob = -N*log(N), 0.0
     for i in xrange(N):
