@@ -21,19 +21,15 @@ def proper_shuffle():
 N = 1000
 P_MOVE = 1.0/N
 P_STAY = 1.0-P_MOVE
-f = [[float(i == j) for j in xrange(N)] for i in xrange(N)]
-g = [0.0]*N
+p_stay_to_the_power = [1.0]
+for i in xrange(N-1):
+    p_stay_to_the_power.append(p_stay_to_the_power[-1]*P_STAY)
+accu = [[0.0]*N for _ in xrange(N)]
 for i in xrange(N):
-    p_stay_to_the_power_j = 1.0
     for j in xrange(N):
-        g[i] += f[i][j] * p_stay_to_the_power_j
-        f[i][j] = 1.0-g[i]
-        p_stay_to_the_power_j *= P_STAY
-for i in xrange(N):
-    p_stay_to_the_power_n_m_1_m_j = p_stay_to_the_power_j/P_STAY
-    for j in xrange(N):
-        f[i][j] = (f[i][j] * p_stay_to_the_power_n_m_1_m_j + g[i]) * P_MOVE
-        p_stay_to_the_power_n_m_1_m_j /= P_STAY
+        accu[i][j] = accu[i][j-1] + (i == j) * p_stay_to_the_power[i]
+f = [[((1.0-accu[i][j]) * p_stay_to_the_power[N-1-j] + accu[i][N-1]) * P_MOVE
+       for j in xrange(N)] for i in xrange(N)]
 assert(sum(map(lambda x: sum(x), f))/N == 1.0)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
