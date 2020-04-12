@@ -25,7 +25,7 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Charging Chaos](https://code.google.com/codejam/contest/2984486/dashboard#s=p0)| [Python](./Round%201A/charging_chaos.py) | _O(N^2)_  | _O(N)_  | Easy | | Bit Manipulation |
 |B| [Full Binary Tree](https://code.google.com/codejam/contest/2984486/dashboard#s=p1)| [Python](./Round%201A/full_binary_tree.py)  | _O(N)_ |  _O(N)_ | Easy | | DFS, Graph, Binary Tree |
-|C| [Proper Shuffle](https://code.google.com/codejam/contest/2984486/dashboard#s=p2)| [Python](./Round%201A/proper_shuffle.py) | precompute: _O(N^2)_<br>classify: _O(N)_ |  _O(N^2)_ | Medium | | DP, Naive Bayes Classifier |
+|C| [Proper Shuffle](https://code.google.com/codejam/contest/2984486/dashboard#s=p2)| [Python](./Round%201A/proper_shuffle.py) | precompute: _O(N^2)_<br>classify: _O(N)_ |  _O(N^2)_ | Medium | | Precomputation, Probability, Naive Bayes Classifier |
 
 ## Round 1B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
