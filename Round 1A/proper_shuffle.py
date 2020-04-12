@@ -34,5 +34,6 @@ for i in xrange(N):
     for j in xrange(N):
         f[i][j] = (f[i][j] * p_stay_to_the_power_n_m_1_m_j + g[i]) * P_MOVE
         p_stay_to_the_power_n_m_1_m_j /= P_STAY
+assert(sum(map(lambda x: sum(x), f))/N == 1.0)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
