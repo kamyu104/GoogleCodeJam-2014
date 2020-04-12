@@ -18,17 +18,17 @@ def proper_shuffle():
         log_bad_prob += log(f[S[i]][i])
     return "GOOD" if log_good_prob > log_bad_prob else "BAD"
 
-MAX_N = 1000
-P_MOVE = 1.0/MAX_N
+N = 1000
+P_MOVE = 1.0/N
 P_STAY = 1.0-P_MOVE
-dp1 = [[float(i == j) for j in xrange(MAX_N)] for i in xrange(MAX_N)]
-dp2 = [0.0]*MAX_N
+dp1 = [[float(i == j) for j in xrange(N)] for i in xrange(N)]
+dp2 = [0.0]*N
 p_stay_to_the_power_k = 1.0
-for k in xrange(MAX_N):
-    for i in xrange(MAX_N):
+for k in xrange(N):
+    for i in xrange(N):
         dp2[i] += dp1[i][k] * p_stay_to_the_power_k * P_MOVE
         dp1[i][k] = (P_MOVE-dp2[i]) / (p_stay_to_the_power_k * P_STAY)
     p_stay_to_the_power_k *= P_STAY
-f = [[dp1[i][j] * p_stay_to_the_power_k + dp2[i] for j in xrange(MAX_N)] for i in xrange(MAX_N)]
+f = [[dp1[i][j] * p_stay_to_the_power_k + dp2[i] for j in xrange(N)] for i in xrange(N)]
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
