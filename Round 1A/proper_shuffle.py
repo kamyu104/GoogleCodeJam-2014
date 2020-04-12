@@ -24,7 +24,7 @@ P_STAY = 1.0-P_MOVE
 p_stay_to_the_power = [1.0]*N
 for i in xrange(N-1):
     p_stay_to_the_power[i+1] = p_stay_to_the_power[i]*P_STAY
-f = [[((1.0-(p_stay_to_the_power[i] if i <= j else 0)) * p_stay_to_the_power[N-1-j] + p_stay_to_the_power[i]) * P_MOVE for j in xrange(N)] for i in xrange(N)]
+f = [[((1.0-(p_stay_to_the_power[i] if i <= j else 0.0)) * p_stay_to_the_power[N-1-j] + p_stay_to_the_power[i]) * P_MOVE for j in xrange(N)] for i in xrange(N)]
 assert(sum(map(lambda x: sum(x), f))/N == 1.0)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, proper_shuffle())
