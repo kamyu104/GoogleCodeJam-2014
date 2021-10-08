@@ -53,10 +53,10 @@ def trie_sharding():
     result, total = 0, 1
     for i in reversed(xrange(len(trie))):  # O(T) times
         cnt[i] = int(i in end_nodes)
-        cnts = [1] if i in end_nodes else []
-        for j in trie[i].itervalues():
-            cnts.append(cnt[j])
-            cnt[i] = min(cnt[i]+cnt[j], N)
+        cnts = [cnt[j] for j in trie[i].itervalues()]
+        if i in end_nodes:
+            cnts.append(1)
+        cnt[i] = min(sum(cnts), N)
         result += cnt[i]
         total = mulmod(total, count(cnts, cnt[i]))
     return "%s %s" % (result, total)
