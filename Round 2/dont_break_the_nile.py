@@ -28,14 +28,14 @@ def dont_break_the_nile():
     dist = defaultdict(lambda: float("inf"))
     dist[src] = 0
     while rects:
-        r = min(rects, key=lambda x: dist[x])
-        if r == dst:
+        u = min(rects, key=lambda x: dist[x])
+        if u == dst:
             break
-        rects.remove(r)
-        for rect in rects:
-            d = dist[r]+distance(r, rect)
-            if d < dist[rect]:
-                dist[rect] = d
+        rects.remove(u)
+        for v in rects:
+            d = dist[u]+distance(u, v)
+            if d < dist[v]:
+                dist[v] = d
     return dist[dst]
 
 for case in xrange(input()):
