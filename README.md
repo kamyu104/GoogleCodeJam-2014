@@ -1,4 +1,4 @@
-# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-19%20%2F%2027-ff69b4.svg)
+# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-23%20%2F%2027-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A `4-minute` timer is set for the small dataset and a `8-minute` timer is set for the large dataset this year.
 
@@ -44,10 +44,10 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Round 2
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Data Packing](https://code.google.com/codejam/contest/3014486/dashboard#s=p0)| | | | | | |
-|B| [Up and Down](https://code.google.com/codejam/contest/3014486/dashboard#s=p1)| | | | | | |
-|C| [Don't Break The Nile](https://code.google.com/codejam/contest/3014486/dashboard#s=p2)| | | | | | |
-|D| [Trie Sharding](https://code.google.com/codejam/contest/3014486/dashboard#s=p3)| | | | | | |
+|A| [Data Packing](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000432b8d)| [Python](./Round%202/data_packing.py) [Python](./Round%202/data_packing2.py) | _O(N)_ | _O(1)_ | Easy | | Greedy, Two Pointers |
+|B| [Up and Down](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/000000000043333d)| [Python](./Round%202/up_and_down.py) | _O(NlogN)_ | _O(N)_ | Easy | | Greedy, BIT, Fenwick Tree |
+|C| [Don't Break The Nile](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000433109)| [Python](./Round%202/dont_break_the_nile.py) | _O(B^2)_ | _O(B)_ | Medium | | Greedy, Dijkstra's Algorithm |
+|D| [Trie Sharding](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000432f41)| [Python](./Round%202/trie_sharding.py) | _O(T * N^2)_ | _O(T)_ | Hard | | Trie, Greedy, Combination, Counting, DP |
 
 ## Round 3
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
