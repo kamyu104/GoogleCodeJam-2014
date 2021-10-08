@@ -3,7 +3,7 @@
 # Google Code Jam 2014 Round 2 - Problem D. Trie Sharding
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000432f41
 #
-# Time:  O(T * N^2), T is the number of nodes in trie
+# Time:  O(M * L + T * N^2), L is the max length of strings in S, T is the number of nodes in trie
 # Space: O(T)
 #
 
