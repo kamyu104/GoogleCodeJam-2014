@@ -44,7 +44,7 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Round 2
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Data Packing](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000432b8d)| [Python](./Round%202/data_packing.py) [Python](./Round%202/data_packing2.py) | _O(N)_ | _O(1)_ | Easy | | Greedy, Two Pointers |
+|A| [Data Packing](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000432b8d)| [Python](./Round%202/data_packing.py) [Python](./Round%202/data_packing2.py) | _O(N)_ | _O(1)_ | Easy | | Greedy, Counting Sort, Two Pointers |
 |B| [Up and Down](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/000000000043333d)| [Python](./Round%202/up_and_down.py) | _O(NlogN)_ | _O(N)_ | Easy | | Greedy, BIT, Fenwick Tree |
 |C| [Don't Break The Nile](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000433109)| [Python](./Round%202/dont_break_the_nile.py) | _O(B^2)_ | _O(B)_ | Medium | | Greedy, Minimum Cut, Dijkstra's Algorithm |
 |D| [Trie Sharding](https://codingcompetitions.withgoogle.com/codejam/round/0000000000432fed/0000000000432f41)| [Python](./Round%202/trie_sharding.py) | _O(T * N^2)_ | _O(T)_ | Hard | | Trie, Greedy, Combination, Counting, DP |
