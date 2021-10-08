@@ -40,7 +40,7 @@ def trie_sharding():
 
     trie = [{}]
     end_nodes = set()
-    for s in S:
+    for s in S:  # Time: O(M * L)
         curr = 0
         for c in s:
             if c not in trie[curr]:
