@@ -28,7 +28,7 @@ def count(cnts, n):  # Time: O(N^2), count of each server with at most one strin
     dp = {}
     for i in xrange(1, n+1):
         dp[i] = 1
-        for k in cnts:  # Time: O(26)
+        for k in cnts:  # Time: O(26+1)
             dp[i] = mulmod(dp[i], nCr(i, k))  # all count of each server with at most one string from each subtree
         for k in xrange(1, i):
             dp[i] = submod(dp[i], mulmod(dp[k], nCr(i, k)))  # substract count of k non-empty servers and (i-k) empty servers for k in [1, i-1]
