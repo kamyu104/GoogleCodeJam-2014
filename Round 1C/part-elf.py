@@ -1,6 +1,6 @@
 # Copyright (c) 2016 kamyu. All rights reserved.
 #
-# Google Code Jam 2016 Round 1C - Problem A. Part Elf
+# Google Code Jam 2014 Round 1C - Problem A. Part Elf
 # https://code.google.com/codejam/contest/3004486/dashboard#s=p0
 #
 # Time:  O(logQ)

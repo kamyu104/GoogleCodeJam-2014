@@ -1,6 +1,6 @@
 # Copyright (c) 2016 kamyu. All rights reserved.
 #
-# Google Code Jam 2016 Round 1C - Problem B. Reordering Train Cars
+# Google Code Jam 2014 Round 1C - Problem B. Reordering Train Cars
 # https://code.google.com/codejam/contest/3004486/dashboard#s=p1
 #
 # Time:  O(L), L is the set of connected Cars' length.

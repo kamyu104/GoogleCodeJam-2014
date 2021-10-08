@@ -1,6 +1,6 @@
 # Copyright (c) 2016 kamyu. All rights reserved.
 #
-# Google Code Jam 2016 Round 1B - Problem B. New Lottery Game
+# Google Code Jam 2014 Round 1B - Problem B. New Lottery Game
 # https://code.google.com/codejam/contest/2994486/dashboard#s=p1
 #
 # Time:  O(log(max(A, B)))

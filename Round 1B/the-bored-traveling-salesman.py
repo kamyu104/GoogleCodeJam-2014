@@ -1,6 +1,6 @@
 # Copyright (c) 2016 kamyu. All rights reserved.
 #
-# Google Code Jam 2016 Round 1B - Problem C. The Bored Traveling Salesman
+# Google Code Jam 2014 Round 1B - Problem C. The Bored Traveling Salesman
 # https://code.google.com/codejam/contest/2994486/dashboard#s=p2
 #
 # Time:  O(N^3)

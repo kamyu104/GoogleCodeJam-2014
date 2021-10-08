@@ -1,6 +1,6 @@
 # Copyright (c) 2016 kamyu. All rights reserved.
 #
-# Google Code Jam 2016 Round 1B - Problem A. The Repeater
+# Google Code Jam 2014 Round 1B - Problem A. The Repeater
 # https://code.google.com/codejam/contest/2994486/dashboard#s=p0
 #
 # Time:  O(X * N), N is the number of strings,
