@@ -36,14 +36,14 @@ def up_and_down():
     N = input()
     A = map(int, raw_input().strip().split())
 
-    num_to_rank = {x:i for i, x in enumerate(sorted(A))}
-    rank_to_idx = {num_to_rank[x]:i for i, x in enumerate(A)}
-    bit = BIT([1]*N)
+    num_to_idx = {x:i for i, x in enumerate(A)}
+    A.sort()
+    bit = BIT([1]*len(A))
     result = 0
-    for rank in xrange(N):
-        i = rank_to_idx[rank]
+    for rank, x in enumerate(A):
+        i = num_to_idx[x]
         cnt = bit.query(i)
-        result += min(cnt-1, (N-rank)-cnt)
+        result += min(cnt-1, (len(A)-rank)-cnt)
         bit.add(i, -1)
     return result
 
