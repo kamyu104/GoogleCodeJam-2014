@@ -24,12 +24,12 @@ def nCr(n, k):
         inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
     return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 
-def count(cnts, n):  # Time: O(N^2)
+def count(cnts, n):  # Time: O(N^2), count of each server with at most one string from each subtree and at least one string
     dp = {}
     for i in xrange(1, n+1):
         dp[i] = 1
         for k in cnts:  # Time: O(26)
-            dp[i] = mulmod(dp[i], nCr(i, k))  # all possible count
+            dp[i] = mulmod(dp[i], nCr(i, k))  # all count of each server with at most one string from each subtree
         for k in xrange(1, i):
             dp[i] = submod(dp[i], mulmod(dp[k], nCr(i, k)))  # substract count of k non-empty servers and (i-k) empty servers for k in [1, i-1]
     return dp[n]
@@ -52,7 +52,8 @@ def trie_sharding():
     cnt = {}
     result, total = 0, 1
     for i in reversed(xrange(len(trie))):  # O(T) times
-        cnts = [1]*(i in end_nodes)+[cnt[child] for child in trie[i].itervalues()]
+        cnts = [int(i in end_nodes)]
+        cnts.extend(cnt[child] for child in trie[i].itervalues())
         cnt[i] = min(sum(cnts), N)
         result += cnt[i]
         total = mulmod(total, count(cnts, cnt[i]))
