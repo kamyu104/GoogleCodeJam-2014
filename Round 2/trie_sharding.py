@@ -31,7 +31,7 @@ def count(cnts, n):  # Time: O(N^2)
         for k in cnts:  # Time: O(26)
             dp[i] = mulmod(dp[i], nCr(i, k))  # all possible count
         for k in xrange(1, i):
-            dp[i] = submod(dp[i], mulmod(dp[k], nCr(i, k)))  # substract count of j non-empty servers and (i-j) empty servers for j in [1, i-1]
+            dp[i] = submod(dp[i], mulmod(dp[k], nCr(i, k)))  # substract count of k non-empty servers and (i-k) empty servers for k in [1, i-1]
     return dp[n]
 
 def trie_sharding():
@@ -52,7 +52,7 @@ def trie_sharding():
     cnt = {}
     result, total = 0, 1
     for i in reversed(xrange(len(trie))):  # O(T) times
-        cnts = [1]*(i in end_nodes)+[cnt[j] for j in trie[i].itervalues()]
+        cnts = [1]*(i in end_nodes)+[cnt[child] for child in trie[i].itervalues()]
         cnt[i] = min(sum(cnts), N)
         result += cnt[i]
         total = mulmod(total, count(cnts, cnt[i]))
