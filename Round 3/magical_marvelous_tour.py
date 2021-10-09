@@ -1,4 +1,4 @@
-# Copyright (c) 2016 kamyu. All rights reserved.
+# Copyright (c) 2021 kamyu. All rights reserved.
 #
 # Google Code Jam 2014 Round 3 - Problem A. Magical, Marvelous Tour
 # https://codingcompetitions.withgoogle.com/codejam/round/000000000043371f/000000000043380e
