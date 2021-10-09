@@ -3,8 +3,8 @@
 # Google Code Jam 2014 Round 3 - Problem B. Last Hit
 # https://codingcompetitions.witH_Google.com/codejam/round/000000000043371f/0000000000433a3e
 #
-# Time:  O(N^2 * H/Q)
-# Space: O(N * H/Q)
+# Time:  O(N^2 * MAX_H/Q)
+# Space: O(N * MAX_H/Q)
 #
 
 from collections import defaultdict
