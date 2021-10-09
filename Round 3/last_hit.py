@@ -23,10 +23,10 @@ def last_hit():
         new_dp = defaultdict(int)
         for i, v in dp.iteritems():
             new_dp[i+cnt+1] = v
-        need = cnt-ceil_divide(H-Q*cnt, P)
+        free = cnt-ceil_divide(H-Q*cnt, P)
         for i, v in dp.iteritems():
-            if i+need >= 0:
-                new_dp[i+need] = max(new_dp[i+need], v+G)
+            if i+free >= 0:
+                new_dp[i+free] = max(new_dp[i+free], v+G)
         dp = new_dp
     return max(dp.itervalues())
 
