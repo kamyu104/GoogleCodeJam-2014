@@ -1,4 +1,4 @@
-# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-23%20%2F%2027-ff69b4.svg)
+# [GoogleCodeJam 2014](https://codingcompetitions.withgoogle.com/codejam/archive/2014) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md) ![Progress](https://img.shields.io/badge/progress-26%20%2F%2027-ff69b4.svg)
 
 Python solutions of Google Code Jam 2014. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A `4-minute` timer is set for the small dataset and a `8-minute` timer is set for the large dataset this year.
 
@@ -52,10 +52,10 @@ Python solutions of Google Code Jam 2014. Solution begins with `*` means it will
 ## Round 3
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Magical, Marvelous Tour](https://code.google.com/codejam/contest/3024486/dashboard#s=p0)| | | | | | |
-|B| [Last Hit](https://code.google.com/codejam/contest/3024486/dashboard#s=p1)| | | | | | |
-|C| [Crime House](https://code.google.com/codejam/contest/3024486/dashboard#s=p2)| | | | | | |
-|D| [Willow](https://code.google.com/codejam/contest/3024486/dashboard#s=p3)| | | | Very Hard | | |
+|A| [Magical, Marvelous Tour](https://codingcompetitions.withgoogle.com/codejam/round/000000000043371f/000000000043380e)| [Python](./Round%203/magical_marvelous_tour.py) | _O(N)_ | _O(N)_ | Easy | | Two Pointers |
+|B| [Last Hit](https://codingcompetitions.withgoogle.com/codejam/round/000000000043371f/0000000000433a3e)| [Python](./Round%203/last_hit.py) | _O(N^2 * MAX_H/Q)_ | _O(N * MAX_H/Q)_ | Medium | | DP |
+|C| [Crime House](https://codingcompetitions.withgoogle.com/codejam/round/000000000043371f/00000000004331cb)| [Python](./Round%203/crime_house.py) | _O(N^2 * logN)_ | _O(N)_ | Hard | | Greedy, Binary Search |
+|D| [Willow](https://codingcompetitions.withgoogle.com/codejam/round/000000000043371f/00000000004336d0)| | | | Very Hard | | |
 
 ## World Finals
 You can relive the magic of the 2014 Code Jam World Finals by watching the [Live Stream Recording](https://www.youtube.com/watch?v=GYX3sn3Q_DQ) of the competition, problem explanations, interviews with Google and Code Jam engineers, and announcement of winners.
