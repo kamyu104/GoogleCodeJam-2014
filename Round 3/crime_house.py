@@ -26,19 +26,18 @@ def check(infos, S):  # Time: O(N^2), Space: O(N)
         if not infos[i][1]:
             continue
         events[infos[i][1]].append(i)
-    known, inside = set(events.iterkeys()), set()
+    inside = set()
     for e, p in [('E', 0)]*S + infos:
         if e == 'E':
             chosen = False
             if not p:
                 chosen = True
-                i = min([events[x][-1] for x in known if x not in inside and x in events and infos[events[x][-1]][0] == 'L'] or [-1])
+                i = min([event[-1] for x, event in events.iteritems() if x not in inside and infos[event[-1]][0] == 'L'] or [-1])
                 if i != -1:
                     p = infos[i][1]
                 else:
                     p = seq
                     seq += 1
-                    known.add(p)
             if p in inside:
                 return False
             inside.add(p)
