@@ -33,32 +33,32 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
             if not events[x]:
                 del events[x]
         if t == 'E':
-            if not x:
-                i = min([events[x][-1] for x in outside if x in events and logs[events[x][-1]][0] == 'L'] or [-1])
+            if not x:  # case 'E 0'
+                i = min([events[x][-1] for x in outside if x in events and logs[events[x][-1]][0] == 'L'] or [-1])  # case 'E 0' (a)
                 if i != -1:
                     x = logs[i][1]
-                else:
+                else:  # case 'E 0' (b)
                     x = seq  # generate a new distinct criminal id
                     seq += 1
                     outside.add(x)
-            elif x in inside:
+            elif x in inside:  # case 'E X'
                 return False
             outside.remove(x)
             inside.add(x)
         else:
-            if not x:
-                i = min([events[x][-1] for x in inside if x in events and logs[events[x][-1]][0] == 'E'] or [-1])
+            if not x:  # case 'L 0'
+                i = min([events[x][-1] for x in inside if x in events and logs[events[x][-1]][0] == 'E'] or [-1])  # case 'L 0' (a)
                 if i != -1:
                     x = logs[i][1]
                 else:
-                    x = next(iter(x for x in inside if x not in events), 0)
+                    x = next(iter(x for x in inside if x not in events), 0)  # case 'L 0' (b)
                     if not x:
-                        i = max([events[x][-1] for x in inside if x in events and logs[events[x][-1]][0] == 'L'] or [-1])
+                        i = max([events[x][-1] for x in inside if x in events and logs[events[x][-1]][0] == 'L'] or [-1])  # case 'L 0' (c)
                         if i != -1:
                             x = logs[i][1]
                         else:
                             return False
-            elif x not in inside:
+            elif x not in inside:  # case 'L X'
                 return False
             inside.remove(x)
             outside.add(x)
