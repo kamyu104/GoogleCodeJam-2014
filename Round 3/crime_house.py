@@ -28,10 +28,12 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
         events[logs[i][1]].append(i)
     inside = set()
     for t, x in [('E', 0)]*S + logs:
+        if x:
+            events[x].pop()
+            if not events[x]:
+                del events[x]
         if t == 'E':
-            chosen = False
             if not x:
-                chosen = True
                 i = min([event[-1] for x, event in events.iteritems() if x not in inside and logs[event[-1]][0] == 'L'] or [-1])
                 if i != -1:
                     x = logs[i][1]
@@ -41,15 +43,8 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
             if x in inside:
                 return False
             inside.add(x)
-            if chosen:
-                continue
-            events[x].pop()
-            if not events[x]:
-                del events[x]
         else:
-            chosen = False
             if not x:
-                chosen = True
                 i = min([events[x][-1] for x in inside if x in events and logs[events[x][-1]][0] == 'E'] or [-1])
                 if i != -1:
                     x = logs[i][1]
@@ -64,11 +59,6 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
             if x not in inside:
                 return False
             inside.remove(x)
-            if chosen:
-                continue
-            events[x].pop()
-            if not events[x]:
-                del events[x]
     return True
 
 def crime_house():
