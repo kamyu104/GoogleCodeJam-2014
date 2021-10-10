@@ -43,10 +43,9 @@ def check(infos, S):  # Time: O(N^2), Space: O(N)
             inside.add(x)
             if chosen:
                 continue
-            if x in events:
-                events[x].pop()
-                if not events[x]:
-                    del events[x]
+            events[x].pop()
+            if not events[x]:
+                del events[x]
         else:
             chosen = False
             if not x:
@@ -67,10 +66,9 @@ def check(infos, S):  # Time: O(N^2), Space: O(N)
             inside.remove(x)
             if chosen:
                 continue
-            if x in events:
-                events[x].pop()
-                if not events[x]:
-                    del events[x]
+            events[x].pop()
+            if not events[x]:
+                del events[x]
     return True
 
 def crime_house():
