@@ -20,68 +20,68 @@ def binary_search(left, right, check):
     return left
 
 def check(infos, S):  # Time: O(N^2), Space: O(N)
-    seq = max(p for _, p in infos)+1
+    seq = max(x for _, x in infos)+1
     events = defaultdict(list)
     for i in reversed(xrange(len(infos))):
         if not infos[i][1]:
             continue
         events[infos[i][1]].append(i)
     inside = set()
-    for e, p in [('E', 0)]*S + infos:
-        if e == 'E':
+    for t, x in [('E', 0)]*S + infos:
+        if t == 'E':
             chosen = False
-            if not p:
+            if not x:
                 chosen = True
                 i = min([event[-1] for x, event in events.iteritems() if x not in inside and infos[event[-1]][0] == 'L'] or [-1])
                 if i != -1:
-                    p = infos[i][1]
+                    x = infos[i][1]
                 else:
-                    p = seq
+                    x = seq
                     seq += 1
-            if p in inside:
+            if x in inside:
                 return False
-            inside.add(p)
+            inside.add(x)
             if chosen:
                 continue
-            if p in events:
-                events[p].pop()
-                if not events[p]:
-                    del events[p]
+            if x in events:
+                events[x].pop()
+                if not events[x]:
+                    del events[x]
         else:
             chosen = False
-            if not p:
+            if not x:
                 chosen = True
                 i = min([events[x][-1] for x in inside if x in events and infos[events[x][-1]][0] == 'E'] or [-1])
                 if i != -1:
-                    p = infos[i][1]
+                    x = infos[i][1]
                 else:
-                    p = next(iter(x for x in inside if x not in events), 0)
-                    if not p:
+                    x = next(iter(x for x in inside if x not in events), 0)
+                    if not x:
                         i = max([events[x][-1] for x in inside if x in events and infos[events[x][-1]][0] == 'L'] or [-1])
                         if i != -1:
-                            p = infos[i][1]
+                            x = infos[i][1]
                         else:
                             return False
-            if p not in inside:
+            if x not in inside:
                 return False
-            inside.remove(p)
+            inside.remove(x)
             if chosen:
                 continue
-            if p in events:
-                events[p].pop()
-                if not events[p]:
-                    del events[p]
+            if x in events:
+                events[x].pop()
+                if not events[x]:
+                    del events[x]
     return True
 
 def crime_house():
     N = input()
     infos = []
     for _ in xrange(N):
-        e, p = raw_input().strip().split()
-        infos.append((e, int(p)))
+        t, x = raw_input().strip().split()
+        infos.append((t, int(x)))
 
     S = binary_search(0, N, partial(check, infos))
-    return S+sum(1 if e == 'E' else -1 for e, _ in infos) if S != N+1 else "CRIME TIME"
+    return S+sum(1 if t == 'E' else -1 for t, _ in infos) if S != N+1 else "CRIME TIME"
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, crime_house())
