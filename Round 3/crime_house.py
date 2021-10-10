@@ -27,7 +27,8 @@ def check(infos, S):  # Time: O(N^2), Space: O(N)
             continue
         events[infos[i][1]].append(i)
     inside = set()
-    for t, x in [('E', 0)]*S + infos:
+    T = S+sum(1 if t == 'E' else -1 for t, _ in infos)
+    for t, x in [('E', 0)]*S + infos + [('L', 0)]*T:
         if t == 'E':
             chosen = False
             if not x:
