@@ -34,7 +34,7 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
                 del events[x]
         if t == 'E':
             if not x:
-                i = min([event[-1] for x, event in events.iteritems() if x not in inside and logs[event[-1]][0] == 'L'] or [-1])
+                i = min([events[x][-1] for x in events if x not in inside and logs[events[x][-1]][0] == 'L'] or [-1])
                 if i != -1:
                     x = logs[i][1]
                 else:
