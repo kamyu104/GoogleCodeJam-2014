@@ -40,7 +40,7 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
                 else:
                     x = seq
                     seq += 1
-            if x in inside:
+            elif x in inside:
                 return False
             inside.add(x)
         else:
@@ -56,7 +56,7 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
                             x = logs[i][1]
                         else:
                             return False
-            if x not in inside:
+            elif x not in inside:
                 return False
             inside.remove(x)
     return True
