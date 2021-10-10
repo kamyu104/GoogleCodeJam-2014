@@ -38,7 +38,7 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
                 if i != -1:
                     x = logs[i][1]
                 else:
-                    x = seq
+                    x = seq  # generate a new distinct criminal id
                     seq += 1
                     outside.add(x)
             elif x in inside:
