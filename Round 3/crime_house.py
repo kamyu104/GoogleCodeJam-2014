@@ -37,8 +37,8 @@ def check(logs, S):  # Time: O(N^2), Space: O(N)
                 i = min([events[x][-1] for x in outside if x in events and logs[events[x][-1]][0] == 'L'] or [-1])  # case 'E 0' (a)
                 if i != -1:
                     x = logs[i][1]
-                else:  # case 'E 0' (b)
-                    x = seq  # generate a new distinct criminal id
+                else:
+                    x = seq  # case 'E 0' (b), generate a new distinct criminal id
                     seq += 1
                     outside.add(x)
             elif x in inside:  # case 'E X'
