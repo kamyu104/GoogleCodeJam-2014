@@ -7,7 +7,6 @@
 # Space: O(N^2)
 #
 
-from sys import setrecursionlimit
 from collections import defaultdict
 
 # precompute next_node_to, best_coins, best_nodes
@@ -100,9 +99,6 @@ def willow():
         max_diff = max(max_diff, min_diff)
     return max_diff
 
-BASE = 2
-MAX_N = 500
-setrecursionlimit(BASE+MAX_N)
 K = 3
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, willow())
