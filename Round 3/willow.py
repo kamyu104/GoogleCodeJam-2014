@@ -37,7 +37,7 @@ def max_coins(edge_id, best_coins, i, pi):
     return 0 if i < 0 else best_coins[edge_id[i][pi]]
 
 # max coins for branching off at any vertex in [i, j]
-def memoization2(C, edge_id, next_node_to, best_coins, best_nodes, i, pi, j, pj, lookup2):
+def memoization2(C, edge_id, next_node_to, best_coins, best_nodes, i, pi, j, pj, lookup2):  # Time: O(N^2)
     ei, ej = edge_id[i][pi], edge_id[j][pj]
     if lookup2[ei][ej] == -1:
         if i == j:
@@ -53,7 +53,7 @@ def memoization2(C, edge_id, next_node_to, best_coins, best_nodes, i, pi, j, pj,
     return lookup2[ei][ej]
 
 # minimax for the current player with last edge (pi to i) and the other player with last edge (pj to j)
-def memoization(C, edge_id, next_node_to, best_coins, best_nodes, i, pi, j, pj, lookup, lookup2):
+def memoization(C, edge_id, next_node_to, best_coins, best_nodes, i, pi, j, pj, lookup, lookup2):  # Time: O(N^2)
     ei, ej = edge_id[i][pi], edge_id[j][pj]
     if lookup[ei][ej] == -1:
         if i == j:
@@ -98,7 +98,7 @@ def willow():
     lookup = [[-1 for _ in xrange(seq)] for _ in xrange(seq)]
     lookup2 = [[-1 for _ in xrange(seq)] for _ in xrange(seq)]
     max_diff = float("-inf")
-    for i in xrange(N):
+    for i in xrange(N):  # Time: O(N^2)
         min_diff = float("inf")
         for j in xrange(N):
             cost = C[i] - (0 if i == j else C[j])
