@@ -9,7 +9,6 @@
 
 from sys import setrecursionlimit
 from collections import defaultdict
-from heapq import heappush, heappop
 
 # precompute next_node_to, best_coins, best_nodes
 def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, best_nodes):  # Time: O(N)
@@ -18,19 +17,20 @@ def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, bes
         if ni != pi:
             dfs(C, adj, edge_id, ni, i, start, first_node, next_node_to, best_coins, best_nodes)
     best_coins[edge_id[i][pi]] = C[i]+max([best_coins[edge_id[ni][i]] for ni in adj[i] if ni != pi] or [0])
-    min_heap = []
-    for ni in adj[i]:  # Total Time: O(N * logK) = O(N)
+    tops = [(-1, -1)]*K
+    for ni in adj[i]:  # Total Time: O(N * K) = O(N)
         if ni == pi:
             continue
-        heappush(min_heap, (best_coins[edge_id[ni][i]], ni))
-        if len(min_heap) > K:
-            heappop(min_heap)
-    while min_heap:
-        best_nodes[edge_id[i][pi]].append(heappop(min_heap)[1])
+        for k in xrange(len(tops)):
+            if best_coins[edge_id[ni][i]] > tops[k][0]:
+                tops[k+1:] = tops[k:-1]
+                tops[k] = (best_coins[edge_id[ni][i]], ni)
+                break
+    best_nodes[edge_id[i][pi]] = [x for _, x in tops if x != -1]
 
 # return the best next vertex when coming from edge (pi to i), excluding vertex in exlude
 def next_best_except(edge_id, best_nodes, i, pi, exclude):
-    return next(iter(x for x in reversed(best_nodes[edge_id[i][pi]]) if x not in exclude), -1)
+    return next(iter(x for x in best_nodes[edge_id[i][pi]] if x not in exclude), -1)
 
 # max coins for subtree i with parent pi
 def max_coins(edge_id, best_coins, i, pi):
