@@ -36,7 +36,7 @@ def next_best_except(edge_id, best_nodes, i, pi, exclude):
 def max_coins(edge_id, best_coins, i, pi):
     return 0 if i < 0 else best_coins[edge_id[i][pi]]
 
-# max coins for branching off at any vertex in [i, j]
+# max coins for the other player branching off at any vertex in [i, j]
 def memoization2(C, edge_id, next_node_to, best_coins, best_nodes, i, pi, j, pj, lookup2):  # Time: O(N^2)
     ei, ej = edge_id[i][pi], edge_id[j][pj]
     if lookup2[ei][ej] == -1:
