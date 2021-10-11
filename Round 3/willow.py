@@ -23,7 +23,7 @@ def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, bes
         if ni == pi:
             continue
         heappush(min_heap, (best_coins[edge_id[ni][i]], ni))
-        if len(min_heap) == K+1:
+        if len(min_heap) > K:
             heappop(min_heap)
     while min_heap:
         best_nodes[edge_id[i][pi]].append(heappop(min_heap)[1])
