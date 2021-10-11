@@ -9,20 +9,28 @@
 
 from sys import setrecursionlimit
 from collections import defaultdict
+from heapq import heappush, heappop
 
 # precompute next_node_to, best_coins, best_nodes
-def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, best_nodes):
+def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, best_nodes):  # Time: O(N)
     next_node_to[start][i] = first_node
     for ni in adj[i]:
         if ni != pi:
             dfs(C, adj, edge_id, ni, i, start, first_node, next_node_to, best_coins, best_nodes)
     best_coins[edge_id[i][pi]] = C[i]+max([best_coins[edge_id[ni][i]] for ni in adj[i] if ni != pi] or [0])
-    arr = sorted(((best_coins[edge_id[ni][i]], ni) for ni in adj[i] if ni != pi), reverse=True)
-    best_nodes[edge_id[i][pi]][:] = [arr[j][1] for j in xrange(min(len(arr), K))]
+    min_heap = []
+    for ni in adj[i]:  # Total Time: O(N * logK) = O(N)
+        if ni == pi:
+            continue
+        heappush(min_heap, (best_coins[edge_id[ni][i]], ni))
+        if len(min_heap) == K+1:
+            heappop(min_heap)
+    while min_heap:
+        best_nodes[edge_id[i][pi]].append(heappop(min_heap)[1])
 
 # return the best next vertex when coming from edge (pi to i), excluding vertex in exlude
 def next_best_except(edge_id, best_nodes, i, pi, exclude):
-    return next(iter(x for x in best_nodes[edge_id[i][pi]] if x not in exclude), -1)
+    return next(iter(x for x in reversed(best_nodes[edge_id[i][pi]]) if x not in exclude), -1)
 
 # max coins for subtree i with parent pi
 def max_coins(edge_id, best_coins, i, pi):
@@ -82,7 +90,7 @@ def willow():
     next_node_to = [[-1 for _ in xrange(N+1)] for _ in xrange(N+1)]
     best_coins = [0 for _ in xrange(seq)]
     best_nodes = [[] for _ in xrange(seq)]
-    for i in xrange(N):
+    for i in xrange(N):  # Time: O(N^2)
         dfs(C, adj, edge_id, i, N, N, i, next_node_to, best_coins, best_nodes)
         for j in adj[i]:
             dfs(C, adj, edge_id, j, i, i, j, next_node_to, best_coins, best_nodes)
