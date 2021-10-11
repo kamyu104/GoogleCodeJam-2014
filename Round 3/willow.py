@@ -13,20 +13,14 @@ from collections import defaultdict
 # precompute next_node_to, best_coins, best_nodes
 def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, best_nodes):  # Time: O(N)
     next_node_to[start][i] = first_node
-    for ni in adj[i]:
-        if ni != pi:
-            dfs(C, adj, edge_id, ni, i, start, first_node, next_node_to, best_coins, best_nodes)
+    nis = [ni for ni in adj[i] if ni != pi]
+    for ni in nis:
+        dfs(C, adj, edge_id, ni, i, start, first_node, next_node_to, best_coins, best_nodes)
     best_coins[edge_id[i][pi]] = C[i]+max([best_coins[edge_id[ni][i]] for ni in adj[i] if ni != pi] or [0])
-    tops = [(-1, -1)]*K
-    for ni in adj[i]:  # Total Time: O(N * K) = O(N)
-        if ni == pi:
-            continue
-        for k in xrange(len(tops)):
-            if best_coins[edge_id[ni][i]] > tops[k][0]:
-                tops[k+1:] = tops[k:-1]
-                tops[k] = (best_coins[edge_id[ni][i]], ni)
-                break
-    best_nodes[edge_id[i][pi]] = [x for _, x in tops if x != -1]
+    while len(best_nodes[edge_id[i][pi]]) < K and nis:  # Time: O(N * K) = O(N)
+        ni = max(nis, key=lambda x: best_coins[edge_id[x][i]])
+        best_nodes[edge_id[i][pi]].append(ni)
+        nis.remove(ni)
 
 # return the best next vertex when coming from edge (pi to i), excluding vertex in exlude
 def next_best_except(edge_id, best_nodes, i, pi, exclude):
