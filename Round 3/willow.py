@@ -11,12 +11,17 @@ from collections import defaultdict
 
 # precompute next_node_to, best_coins, best_nodes
 def dfs(C, adj, edge_id, i, pi, start, first_node, next_node_to, best_coins, best_nodes):  # Time: O(N)
-    next_node_to[start][i] = first_node
-    nis = [ni for ni in adj[i] if ni != pi]
-    for ni in nis:
+    if start != len(adj):  # start is not N
+        next_node_to[start][i] = first_node
+    for ni in adj[i]:
+        if ni == pi:
+            continue
         dfs(C, adj, edge_id, ni, i, start, first_node, next_node_to, best_coins, best_nodes)
+    if best_coins[edge_id[i][pi]] != -1:
+        return
     best_coins[edge_id[i][pi]] = C[i]+max([best_coins[edge_id[ni][i]] for ni in adj[i] if ni != pi] or [0])
-    while len(best_nodes[edge_id[i][pi]]) < K and nis:  # Time: O(N * K) = O(N)
+    nis = [ni for ni in adj[i] if ni != pi]
+    while len(best_nodes[edge_id[i][pi]]) < K and nis:  # Total Time: O(N * K) = O(N)
         ni = max(nis, key=lambda x: best_coins[edge_id[x][i]])
         best_nodes[edge_id[i][pi]].append(ni)
         nis.remove(ni)
@@ -81,7 +86,7 @@ def willow():
 
     # precompute
     next_node_to = [[-1 for _ in xrange(N+1)] for _ in xrange(N+1)]
-    best_coins = [0 for _ in xrange(seq)]
+    best_coins = [-1 for _ in xrange(seq)]
     best_nodes = [[] for _ in xrange(seq)]
     for i in xrange(N):  # Time: O(N^2)
         dfs(C, adj, edge_id, i, N, N, i, next_node_to, best_coins, best_nodes)
