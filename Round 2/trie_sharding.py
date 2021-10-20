@@ -31,7 +31,7 @@ def count(cnts, n):  # Time: O(N^2), count of each server with at most one strin
         for k in cnts:  # Time: O(26+1)
             dp[i] = mulmod(dp[i], nCr(i, k))  # all count of each server with at most one string from each subtree
         for k in xrange(1, i):
-            dp[i] = submod(dp[i], mulmod(dp[k], nCr(i, k)))  # substract count of k non-empty servers and (i-k) empty servers for k in [1, i-1]
+            dp[i] = submod(dp[i], mulmod(dp[k], nCr(i, k)))  # subtract count of k non-empty servers and (i-k) empty servers for k in [1, i-1]
     return dp[n]
 
 def trie_sharding():
